@@ -1,0 +1,1004 @@
+/*  after , before عشان ميكنش فيه فارغات في العرض وطول الصفحة لكل العناصر ولو فيه عناصر */
+* , *:before , *:after
+{
+    padding: 0;
+    margin: 0;
+}
+/* كوضع افترضي  margin:8px بياخذ  body ملاحظة ال */
+body
+{
+ 
+    font-family: monospace; 
+    height:auto;   
+}
+/* ///////////////////////////////////////////// start : home page style ///////////////////////////////////////////// */
+/* ----------------------------- start : navbar section --------------------------------------------------------------  */
+/* home page navbar */
+.navbarHome,
+/* contact  page  navbar */
+.navbarContactDiv , 
+/* book online  page  navbar*/
+.navbarBook
+{
+    width:100%;
+    height:auto;
+    /* border:2px solid #0f0; */
+    background-color:#360836; 
+    padding-top:5px;
+    padding:15px 0;
+}
+/* home , contact and book page container */
+.navbarHome         .homeContainer       , 
+.navbarContactDiv   .contactDivContainer , 
+.navbarBook         .bookContainer  
+{
+    width: 85%;
+    height: auto;
+	margin: auto;
+	overflow: hidden;
+    /* border: 2px solid #0f0; */
+}
+
+/* logo part of home , contact and book page */
+.navbarHome         .homeContainer       .logo     , 
+.navbarContactDiv   .contactDivContainer .logo     , 
+.navbarBook         .bookContainer       .logo 
+{
+    float: left; 
+    width:50%;
+    font-size:30px;
+    /* border: 2px solid #0f0;  */
+    /* box-sizing: border-box;  */
+}
+/* h2 of logo part of home , contact and book page */
+.navbarHome         .homeContainer       .logo   .logoH2  , 
+.navbarContactDiv   .contactDivContainer .logo   .logoH2  , 
+.navbarBook         .bookContainer       .logo   .logoH2
+{
+    font-size: 35px;
+    text-transform: uppercase;
+    color:#eb9888;
+}
+/* span of h2 of logo part of home , contact and book page */
+.navbarHome         .homeContainer       .logo   .logoH2   .logoH2Span , 
+.navbarContactDiv   .contactDivContainer .logo   .logoH2   .logoH2Span , 
+.navbarBook         .bookContainer       .logo   .logoH2   .logoH2Span
+{
+    color:#ff0;
+    font-weight: normal;
+}
+/* ul div part of home , contact and book page */
+.navbarHome         .homeContainer       .homeUl     , 
+.navbarContactDiv   .contactDivContainer .contactUl  , 
+.navbarBook         .bookContainer       .bookUl
+{  
+    float: left; 
+    width:50%;
+    /*border: 2px solid #0f0;*/
+    /*box-sizing: border-box;*/
+    
+}
+/* ul list part of home , contact and book page */
+.navbarHome         .homeContainer       .homeUl    ul , 
+.navbarContactDiv   .contactDivContainer .contactUl ul , 
+.navbarBook         .bookContainer       .bookUl    ul
+{
+    list-style: none;
+}
+/* li of  ul list part of home , contact and book page */
+.navbarHome         .homeContainer       .homeUl    ul  li , 
+.navbarContactDiv   .contactDivContainer .contactUl ul  li , 
+.navbarBook         .bookContainer       .bookUl    ul  li
+{
+    display: inline-block;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size:20px;
+	text-align: center;
+    cursor: pointer;
+}
+/* links <a> of li of  ul list part of home , contact and book page */
+.navbarHome         .homeContainer       .homeUl    ul  li a , 
+.navbarContactDiv   .contactDivContainer .contactUl ul  li a , 
+.navbarBook         .bookContainer       .bookUl    ul  li a
+{  
+    display: block;
+   /*  border: 2px solid #0f0; */
+    color: #fff;
+    /* padding:top right bottom left  */
+    padding: 10px 10px; 
+}
+/* give color to active page name */
+.navbarHome         .homeContainer       .homeUl    ul  li a.active  , 
+.navbarContactDiv   .contactDivContainer .contactUl ul  li a.active  , 
+.navbarBook         .bookContainer       .bookUl    ul  li a.active
+{
+    color: #eb5424;
+}            
+/* ------------------- chechbox button of navbar in three pages  --------------------- */
+.navbarHome         .homeContainer 			.navInput   , 
+.navbarContactDiv   .contactDivContainer	.navInput   ,
+.navbarBook         .bookContainer 		    .navInput
+{
+    display: none;
+}
+/* label and checkbox of navbar in three pages */
+.navbarHome          .homeContainer          .navLabel  , .navbarHome        .homeContainer      	 .navInput , 
+.navbarContactDiv    .contactDivContainer    .navLabel  , .navbarContactDiv  .contactDivContainer 	 .navInput ,
+.navbarBook          .bookContainer          .navLabel  , .navbarBook        .bookContainer       	 .navInput
+{
+    position: absolute;
+    top:15px;
+    right:10px;
+}
+/* label of the icon of navbar of three pages  */
+.navbarHome         .homeContainer       .navLabel   ,
+.navbarContactDiv   .contactDivContainer .navLabel   ,
+.navbarBook         .bookContainer       .navLabel 
+{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-image: url('../images/open.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+/* When click once in the icon of navbar of three pages , it will replace open icon with close icon */
+.navbarHome         .homeContainer          .navInput:checked ~ .navLabel  ,
+.navbarContactDiv   .contactDivContainer    .navInput:checked ~ .navLabel  ,
+.navbarBook         .bookContainer          .navInput:checked ~ .navLabel
+{
+    background-image: url('../images/close.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navbarHome       .homeContainer           input:checked ~  .homeUl      , 
+.navbarContactDiv .contactDivContainer     input:checked ~  .contactUl   ,
+.navbarBook       .bookContainer           input:checked ~  .bookUl     
+{
+ 
+	display: block;
+    text-align: center;
+}
+
+.navbarHome       .homeContainer           .navInput:checked ~  .homeUl    ul  , 
+.navbarContactDiv .contactDivContainer     .navInput:checked ~  .contactUl ul  ,
+.navbarBook       .bookContainer           .navInput:checked ~  .bookUl    ul 
+{
+    display: block;
+}
+
+/* home page navbar ul          */
+.navbarHome           .homeContainer           input:checked ~  .homeUl    ul  li   ,
+/* contact  page  navbar ul     */
+.navbarContactDiv     .contactDivContainer     input:checked ~  .contactUl ul  li   ,
+/* book  page  navbar ul     */
+.navbarBook           .bookContainer           input:checked ~  .bookUl    ul  li
+{ 
+    /* make all listItems(links) in the same line */
+    display:inline-block;
+}
+/* home page navbar ul li  a       */
+.navbarHome         .homeContainer  	 ul  li  a     ,
+/* contact  page  navbar ul  li a  */
+.navbarContactDiv   .contactDivContainer ul  li  a     ,
+/* book online page  navbar ul li a */
+.navbarBook         .bookContainer 		 ul  li  a
+{
+    /* remove line under link  */
+    text-decoration:none;
+    color:#ff0040;
+    text-transform: capitalize;
+}
+/* ------------------------------------ end : navbar section ------------------------------------------------------  */
+
+/*  <!- ************************************* start : web section  ************************************* --> */
+.web
+{
+    /* border:3px solid rgb(100,200,30); */
+    width: 100%;
+    height:600px;
+    background:url('../images/cover.png') ;
+    background-size:cover;
+    /* عشان اي حاجة جواه تتحط في المنتصف */
+    text-align: center;
+    /* عشان احرك اي عنصر بداخله بحرية بالنسبة لهذا الاب */
+    position: relative;
+    margin:0;
+    width:100%;
+}
+/*-------------------------start: web folk ----------------------------------*/
+.web .folk
+{
+     /*  web folk عشان اعمل مسافة اعلي العنوان اللي اسمه */
+    padding-top:80px;
+    margin-bottom:80px;
+    /* border:2px solid #ff0; */
+}
+.web .folk h2
+{
+    /*  two div عشان ميكنش فيه مسافة بين ال */
+    margin-top:0;
+    font-size:50px;
+    color:#fff;
+    text-transform: uppercase;
+    
+}
+.web .folk p
+{
+    /* paragraph عشان اعمل مسافة بين حروف ال */
+    letter-spacing: 10px;
+    font-size:25px; 
+    color:#fff;
+}
+/*-------------------------end: web folk ----------------------------------*/
+
+/*-------------------------start: web dream ----------------------------------*/
+.web  .dream
+{
+    margin-bottom:10px;
+    /* border:3px solid #f0f; */
+}
+	.web  .dream p
+{
+    color:#fff;
+    font-size:25px;
+}
+/*------------------------- end : web dream ----------------------------------*/
+/*-------------------------start: web bullets ----------------------------------*/
+.web .bullets
+{
+	display: block;
+   /* border:2px solid #00f;*/
+    text-align:center;
+    padding:10px;
+}
+/*  three bullets in web folk */
+.web .bullets span
+{
+    display:block;
+    width:15px;
+    height:15px;
+    margin-left:650px;
+    margin-top:20px;
+    background-color:#fff;
+    border-radius:50%;
+}
+/*-------------------------end: web bullets ----------------------------------*/
+
+/*------------------------- start : web work ----------------------------------*/
+.web .work
+{
+    position:absolute;
+    bottom:0;
+    background-color:#ff0048;
+    color:#fff;
+    /*  اللي موجود فيه  parentهيبعد عن الناحية الشمال بنسبة 40 في المائة من عرض ال */
+    left:40%;
+    padding :15px;
+    width:250px;
+    font-size:20px;
+}
+/* .work دي الحاجة اللي هتظهر بعد الديف اللي واخد كلاس*/
+.web .work:after
+{
+    /*  .work  هفرغ المحتوي بتاع الحاجة اللي هتظهر بعد الديف اللي واخذ كلاس */
+    content:"";
+    /*  border-top وباقي الحدود هخليها شفافة يعني هخفيها بس مينفعش اعطيها 0 لانها بيتاثر في ال  border-top انا محتاج فقط ال */
+    border-top:30px solid #ff0048 ;
+    border-right:30px solid transparent;
+    border-bottom:30px solid transparent; 
+    border-left:30px solid transparent;
+    /*  .web عشان احركه بحرية بالنسبة للاب بتاعه وهو ال  */
+    position: absolute;
+    /* top  من ناحية ال .work هحركه بالنسبة لل */
+    top:53px;
+    /* .work هيبعد عن لناحية الشمال من ال */
+    left:105px;
+}   
+/*------------------------- end : web work ----------------------------------*/
+
+/* <!-- ***************************** end : web section *********************************** --> */ 
+
+/* <!-- ***************************** start : images section *********************************** -->*/
+.images
+{
+    width: 100%;
+    /* border:3px solid rgb(100,20,20); */
+}
+/* كل ديف من الاثني عشر ديف هياخذ خمس وعشرون في المائة من عرض الديف الكبير عشان كل صف يكون فيه 4 صور */ 
+/* الخواص المشتركة في ال12 صورة */
+.images .image1Div , .images .image2Div  , .images  .image3Div  , .images .image4Div,
+.images .image5Div , .images .image6Div  , .images  .image7Div  , .images .image8Div,
+.images .image9Div , .images .image10Div , .images  .image11Div , .images .image12Div
+{
+    width:25%;
+    height:252px; 
+    float: left; /* عشان الصور تترتب من الشمال لليمين علي نفس السطر وراء بعض    */
+}
+/* we have 12 images , each row will contain 4 images */
+.images   .image1Div { background: url('../images/image_1.jpg'); }
+.images   .image2Div { background: url('../images/image_2.jpg'); }
+.images   .image3Div { background: url('../images/image_3.jpg'); }
+.images   .image4Div { background: url('../images/image_4.jpg'); }
+.images   .image5Div { background: url('../images/image_5.jpg'); }
+.images   .image6Div { background: url('../images/image_6.jpg'); }
+.images   .image7Div { background: url('../images/image_7.jpg'); }
+.images   .image8Div { background: url('../images/image_8.jpg'); }
+.images   .image9Div { background: url('../images/image_9.jpg'); }
+.images   .image10Div{ background: url('../images/image_10.jpg');}
+.images   .image11Div{ background: url('../images/image_11.jpg');}
+.images   .image12Div{ background: url('../images/image_12.jpg');}
+/* فهياخذ العرض والطول بتوع هذا الديف لانه يعتبر الاب بتاعه image1Div وبما ان هذا الديف موجود بداخل الديف */
+/* each image of 12 images will contain overlay layer when hover */
+.images   .image1Div  .overlay ,  .images   .image2Div  .overlay ,  .images   .image3Div  .overlay ,
+.images   .image4Div  .overlay ,  .images   .image5Div  .overlay ,  .images   .image6Div  .overlay ,
+.images   .image7Div  .overlay ,  .images   .image8Div  .overlay ,  .images   .image9Div  .overlay ,
+.images   .image10Div .overlay ,  .images   .image11Div .overlay ,  .images   .image12Div .overlay 
+{
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.5);
+    /*  عشان يحجز مكان للديف لو اختفي  opacityهخفي هذا الديف لحد ما احط الفارة علي الصورة فهيظهر وبستخدم ال */
+    opacity:0;
+}
+/*  لما احط الفارة علي الصورة هيظهر لي طبقة مظلمة علي كل ديف من ال 12 الديف */
+.images   .image1Div:hover  .overlay ,  .images   .image2Div:hover  .overlay ,  .images   .image3Div:hover  .overlay ,
+.images   .image4Div:hover  .overlay ,  .images   .image5Div:hover  .overlay ,  .images   .image6Div:hover  .overlay , 
+.images   .image7Div:hover  .overlay ,  .images   .image8Div:hover  .overlay ,  .images   .image9Div:hover  .overlay ,
+.images   .image10Div:hover .overlay ,  .images   .image11Div:hover .overlay ,  .images   .image12Div:hover .overlay 
+{
+    opacity:1;   
+}
+
+/*  <!-- ***************************** end : images section *********************************** -->   */
+
+.clearClass 
+{
+    /* --------------------- float  عشان يلغي تاثير ال ----------------------  */
+    clear: both;
+}
+
+/* <!-- ***************************** start : meet folk section *********************************** -->*/
+
+.meet
+{
+    width:100%;
+    /* .meet  بتاع الاب اللي واخد كلاس heightبتاع كل العناصر اللي بداخله وهيكون هوه ال height هيجمع ال */
+    height:auto;
+    /*  meet بحرية بالنسبة للعنصر الاب وهو meet header عشان احرك ال */
+    position: relative;
+    text-align: center;
+    background-color:#ddd;
+}
+/* ----------------------- start : meet section header box -------------------------- -->*/
+
+.headMeet
+{
+    /*  meet بحرية بالنسبة للعنصر الاب وهو meet header عشان احرك ال */
+    position: relative;
+    width:100%;
+    height:50px;
+    /* meet section عشان يبدا من بداية ال */
+    top:0;
+    text-align: center;
+    background-color:#ff0048;
+    color:#fff;
+    /* border:2px solid #0ff; */
+    padding-top:20px;
+    font-size:20px;
+}
+
+/* triangle under paragraph */
+.headMeet:after
+{
+    content:"";
+    /* .messageUnderImages عشان احركه بحرية بالنسبة للديف اللي واخذ كلاس اسمه */
+    position:absolute;
+    border-top:25px solid #ff0048;
+    border-left:25px solid transparent;
+    border-bottom:25px solid transparent;
+    border-right:25px solid transparent;
+    top:70px;
+    left:47%;
+}
+/* ----------------------- end : meet section header box ----------------------- */
+/* ----------------------- start : meet section header  ----------------------- */
+.meet .meetHeader
+{
+    text-align: center;
+} 
+/* meet the folk header */
+.meet  h2
+{
+    margin:0;
+    padding:100px;
+    font-size:40px;
+    color:#ff0048;
+   /* border:5px solid rgb(50,150,50); */
+
+}
+/* ----------------------- end : meet section header ----------------------- */
+/* ----------------------- start : meet the folk images section  ----------------------- */
+
+/*  اللي تحت الاربع صورة header دي ال */
+.meet .meet_images h3
+{
+    color:#ff0048;
+    font-size:30px;
+    /* المسافة بين كل حرف والاخر */
+    letter-spacing:5px;
+}
+/*  اللي تحت الاربع صورة header دي ال */
+.meet .meet_images  p
+{
+    font-size:20px;
+   
+}
+/* نفس الكلام هيطبق علي الاربع صور */
+.meet .meet_images .meetImagesDiv1 , .meet .meet_images .meetImagesDiv2 ,
+.meet .meet_images .meetImagesDiv3 , .meet .meet_images .meetImagesDiv4
+{
+    float:left;
+    width:45%;
+    padding:10px;
+    margin-top:10px;
+    margin-left:15px;
+    /* border:5px solid rgb(20,10,200); */
+}
+/* نفس الكلام هيطبق علي الاربع صور */
+.meet .meet_images .meetImagesDiv1 h3 , .meet .meet_images .meetImagesDiv2 h3 ,
+.meet .meet_images .meetImagesDiv3 h3 , .meet .meet_images .meetImagesDiv4 h3 ,
+.meet .meet_images .meetImagesDiv1 p  , .meet .meet_images .meetImagesDiv2 p ,
+.meet .meet_images .meetImagesDiv3 p  , .meet .meet_images .meetImagesDiv4 p 
+{
+    text-transform: capitalize;
+}
+/* ----------------------- end : meet the folk images section  ----------------------- */
+/* ----------------------- start : contact us button  ----------------------- */
+.meet button
+{
+    width:250px;
+    cursor: pointer;
+    font-weight:bold;
+    background-color:#000;
+    border:0;
+    color:#fff;
+    padding:10px;
+    font-size:20px;
+    margin-top:20px;
+    margin-bottom:50px;
+}
+
+/* ----------------------- end : contact us button  ----------------------- */
+
+/* <!-- ***************************** end : meet folk section *********************************** -->*/
+/* ------------------------------------- start : Question section ---------------------------------- */
+.questionDiv
+{
+    width:100%;
+    height: auto;
+    color:#fff;
+    float: left;
+    /* meet images section  عشان يكون ملتصق بال*/
+    margin-top:0;
+    background:url('../images/Cover_2.jpg');
+    background-size: cover ;    
+    text-align: center;
+    font-size:20px;
+    padding-top:7%;
+}
+/* 4 div */
+.questionDiv  .whatQuestionDiv  ,
+.questionDiv  .whoQuestionDiv   , 
+.questionDiv  .howQuestionDiv   ,
+.questionDiv  .whatBelieveQuestionDiv
+{
+    width:45%;
+    /* هيسيب مسافة ناحية اليمين بين كل ديف من الاربعه ديف */
+    margin-left:40px;
+    margin-top:20px;
+    margin-bottom:80px;
+    float: left;
+    /* border:2px solid #f00; */
+}
+/* four images h4 */
+.questionDiv  .whatQuestionDiv  h4   , 
+.questionDiv  .whoQuestionDiv   h4   ,
+.questionDiv  .howQuestionDiv   h4   , 
+.questionDiv .whatBelieveQuestionDiv h4
+{
+    margin:0;
+    padding:0;
+    font-size: 35px;
+    text-transform: capitalize;
+}
+
+/* back to top button */
+.backToTopButt
+{
+    border:0;
+    width:200px;
+    margin-top:15px;
+    margin-bottom:10px;
+    background-color:#fff;
+    color:#000;
+    padding:15px;
+    cursor:pointer;
+    font-weight: bold;
+}
+/* *************** start : five bullets under  back to top button ***************************  */
+.fiveBullets
+{
+    /* border:2px solid #00f; */
+    text-align:center;
+    padding:5px;
+}
+/*  three bullets in web folk */
+.fiveBullets  span
+{
+    /* عشان العناصر تظهر في سطر واحد جنب بعض */
+    display:inline-block;
+    width:10px;
+    height:10px;
+    margin-left:10px;
+    background-color:#fff;
+    border-radius:50%;
+    cursor: pointer;
+}
+.fiveBullets  span:hover
+{
+      background-color:#0ff;
+}
+/* *************** end : five bullets under  back to top button ***************************  */
+/* ------------------------------- start : footer section --------------------------------- */
+.footerClass
+{
+    
+    text-align: center;
+    line-height:50px;
+    background-color:#f5f5f5;
+    font-size:20px;
+   /* border:2px solid #0f0; */
+}
+.footerClass span
+{
+    color:#ff0048;
+}
+/* ------------------------------- end : footer section --------------------------------- */
+/* ------------------------------------- end : Question section ---------------------------------- */
+/* ///////////////////////////////////////////// end : home page style ///////////////////////////////////////////// */
+
+/* ///////////////////////////////////////////// start : contact us page style //////////////////////////////////////// */
+/* ---------------------------------------  start : navbar section  ------------------------- */
+
+
+/* ---------------------------------------  end : navbar section ------------------------- */
+
+/* ---------------------------------------  start : contact section ------------------------- */
+/* contact navbar page style in the navbar home page style */
+.contactDiv  ,
+/* our service Div */
+.ourServiceDiv
+{
+    width:100%;
+    height:800px;
+    /* border:5px solid #0ff; */
+    text-align: center;
+    padding-top:5%;
+    background:url('../images/coverPage2.PNG');
+    background-size:cover;
+}
+.contactDiv h2  , 
+.contactDiv  .formDivClass h3
+{ 
+    /* border:5px solid #0f0; */
+    text-transform: capitalize;
+    font-style:italic;
+    font-size:40px;
+}
+.contactDiv  p
+{
+    text-transform: capitalize;
+    font-size:22px;
+	margin: 20px;
+}
+
+/* ---------------------------- start : contact form -------------------------------- */
+.contactDiv  .formDivClass
+{
+    /* border:3px solid #00f;  */
+    width:530px;
+    height: auto;
+    /* عشان يخلي العنصر في منتصف العرض بتاع الصفحة يعني هيخلي المسافة اللي علي الشمال بتساوي المسافة اللي علي اليمين وهيسيب مسافة من الاعلي والاسفل بمقدار 50 بيكسل */
+    margin: auto;
+    padding:5px;
+}
+.contactDiv  .formDivClass  h3
+{ 
+    color:#df1a5a; 
+}
+.contactDiv  .formDivClass   input[type=text]  , textarea
+{
+    /* يظهر في سطر لوحده  textField عشان كل */
+    display: block;
+    /*  باخذ عرص الفورم كلهاا عشان كل عنصر يظهر في سطر لوحده  textField عشان كل*/
+    width:518px;
+    height: 35px;
+    margin-bottom:10px;
+    background-color:#df1a5a;
+    color:#fff;
+    padding: 10px ;
+    font-size: 16px ;
+    border:0;
+    /* textField هلغي الاطار اللي بيظهر لما بضغط علي ال */
+    outline:0; 
+}
+textarea 
+{ 
+    height:200px ;
+}
+/* ------------------- placeholder of input , textarea ----------------- */
+.contactDiv  .formDivClass    input::-webkit-input-placeholder      ,
+.contactDiv  .formDivClass    textarea::-webkit-input-placeholder
+{
+    color: #fff ;
+    font-size: 16px ;
+}
+/* submit button */
+.contactDiv  .formDivClass input[type=submit]
+{
+    float:right;
+    border:0;
+    width:100px;
+    border-radius:10px;
+    background-color:#fff;
+    padding:10px;
+    cursor: pointer;
+}
+/* ---------------------------- end : contact form -------------------------------- */
+/* ---------------------------- start :become folkteer -------------------------------- */
+.becomeContainer
+{
+    width:100%;
+    height: auto;
+    background-color:#f5f5f5;
+    /* border:2px solid #0ff; */
+    text-align:center;
+    padding-top:40px;
+}
+.becomeContainer .become1 , .becomeContainer .become2
+{
+    display:block;
+    margin: 50px auto;
+    width:455px;
+    height: auto;
+   /* border:2px solid #00f;  */
+    margin-top:0px;
+}
+.becomeContainer  h4
+{
+    /*   تلقائي margin بيعمل مسافة header لان اي */
+    margin:0;
+    font-size:30px; 
+    color:#ff0048;   
+}
+.becomeContainer p
+{
+    font-size:16px;
+    color:#aaa;
+}
+.becomeContainer .becomeLinks
+{
+    /* مسافة بين اللينكات حيث هيعتبر كل اللينكات عبارة عن كلمة وهيعمل مسافة بين كل كلمة لينك والاخري حيث هيعتبر اللينكات كانها حروف وهيعمل مسافة بينهم */
+    word-spacing:5px;
+}
+.becomeContainer .becomeLinks a
+{ 
+    text-decoration: none ;
+}
+.becomeContainer .becomeLinks a span
+{
+    display: inline-block;
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    background-color: #000;
+    margin: auto;
+}
+/* ---------------------------- end : become folkteer -------------------------------- */
+/* *************************** start : copyRight contact section **************************** */
+/* --------------------- copyright of contact and book online page --------------------------- */
+.copyRightContainer , 
+.footerBookOnline
+{
+    /* هيشمل افقي وراسي فهيزود العرض عن العرض بتاع الصفحة margin , padding افقي لان ال scroll فهيظهر لك  margin or padding وعملت width:100% ملاحظ لو عملت */
+    width:100%;
+    height:auto;
+    border:0;
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color:#ddd;
+    font-size:15px;
+    text-align: center;
+}
+.copyRightContainer p a  ,
+.footerBookOnline   p a
+{
+    text-decoration: none;
+    color:#ff0048;
+    cursor:pointer;
+}
+/* *************************** end : copyRight contact section **************************** */
+
+/* ///////////////////////////////////////////// end : contact us page style //////////////////////////////////// */
+
+/* //////////////////////////////////////////// start : book online  page style //////////////////////////////////// */
+/* book online navbar page style in the navbar home page style */
+/* book online background image and container style in the background image and container style of contaact us page   */
+.ourServiceContainer
+{
+    background-color:#fff;
+    height:400px;
+    margin:auto;
+}
+.ourServiceDiv h3
+{
+    text-transform: capitalize;
+    font-size:40px;
+	margin-bottom:5%;
+    font-style: italic;
+}
+.ourServiceDiv  .ourServiceContainer
+{
+	padding:10%;
+	width: 70%;
+	height: 400px;
+}
+.ourServiceDiv  .ourServiceContainer  .ourServiceChild1 ,
+.ourServiceDiv  .ourServiceContainer  .ourServiceChild2
+{
+    width:50%;
+    height:100%;
+   /*  border:1px solid #00f; 
+	  box-sizing: border-box;
+   */
+}
+.ourServiceDiv  .ourServiceContainer  .ourServiceChild1 
+{
+    float: left;
+}
+.ourServiceDiv  .ourServiceContainer  .ourServiceChild1  img
+{
+    /*   عشان الصورة تاخذ كل العرض والطول بتاعت الديف اللي هيه موجودة فيه */
+    width:100%;
+    height:100%;
+}
+.ourServiceDiv  .ourServiceContainer  .ourServiceChild2
+{
+    float: left;
+    background-color:#ccc;
+    /* الديف اللي في اليمين واخذ 45 في المائة من عرض الديف الاب فهخليه يبعد عن الناحية اليمين بمقدار 5 في المائة باقي ال 50 في المائة*/
+}
+/* ------------------------ container of second div of our service section ------------------------------ */
+.ourServiceDiv  .ourServiceContainer  .ourServiceChild2  .ourServiceChild2Container
+{
+   /* border: 2px solid #0f0;  */
+	width: 100%;
+	height: auto;
+	margin:20% auto;
+}
+.ourServiceDiv  .ourServiceContainer  .ourServiceChild2  .ourServiceChild2Container  p
+{
+    font-size:30px;
+	margin-top:10%;
+}
+.ourServiceDiv  .ourServiceContainer  .ourServiceChild2 button
+{
+    color:#fff;
+    background-color:#000;
+    border:0;
+    text-transform: capitalize;
+    padding:10px;
+    cursor: pointer;
+	margin-top:10%;
+}
+/* //////////////////////////////////////////// end  : book online  page style //////////////////////////////////// */
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ media Query : Responsive website @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* hide the navbar menu button in large screen */
+@media (min-width:0px) and (max-width:1190px)
+{
+    /* ------------------------------------------ navbar part ------------------------------------------*/
+    /* /////////////////// logo //////////////////// */
+    .navbarHome       .homeContainer          .logo , 
+    .navbarContactDiv .contactDivContainer    .logo ,
+    .navbarBook       .bookContainer          .logo   
+    {
+        width: 100%;
+        float: none;
+    }
+     /* div of links */
+    .navbarHome        .homeContainer        .homeUl        , 
+    .navbarContactDiv  .contactDivContainer  .contactUl     ,
+    .navbarBook        .bookContainer        .bookUl       
+    {
+        width:100%;
+        float: none;
+    }
+    
+    /* div of links */
+    .navbarHome        .homeContainer        .homeUl     ul     , 
+    .navbarContactDiv  .contactDivContainer  .contactUl  ul     ,
+    .navbarBook        .bookContainer        .bookUl     ul  
+    {  
+        font-size:21px;
+        margin-top:20px;
+        /* هخفيها وهتظهر لما اضغط علي الايقونة */
+		display: none;
+	}
+    /*  list items of navbar links   <li> */
+    .navbarHome         .homeContainer       .homeUl    ul  li , 
+    .navbarContactDiv   .contactDivContainer .contactUl ul  li , 
+    .navbarBook         .bookContainer       .bookUl    ul  li
+    {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+     /*  list items of navbar links   <li> <a> hover  */
+    .navbarHome        .homeContainer        .homeUl     ul  li a:hover , 
+    .navbarContactDiv  .contactDivContainer  .contactUl  ul  li a:hover ,
+    .navbarBook        .bookContainer        .bookUl     ul  li a:hover
+    {
+        background-color:#000;
+    }
+}
+@media (min-width:0px) and (max-width:852px)
+{
+  /* ///////////////////////////////////////////////// home page //////////////////////////////////////////////// */
+    /* ------------------------------------------ web part ------------------------------------------*/
+	.web .folk h2
+	{
+		font-size: 45px;
+	}
+	.web .folk p , .web  .dream p
+	{
+		font-size:20px;
+	}
+	.web .work
+	{
+		position:absolute;
+		bottom:0;
+		background-color:#ff0048;
+		color:#fff;
+		/*  اللي موجود فيه  parentهيبعد عن الناحية الشمال بنسبة 40 في المائة من عرض ال */
+		left:30%;
+		padding :15px;
+		width:250px;
+		font-size:20px;
+	}
+       
+	.images .image1Div , .images .image2Div , .images .image3Div , .images .image4Div , .images .image5Div , 
+	.images .image6Div , .images .image7Div , .images .image8Div , .images .image9Div , .images .image10Div ,
+	.images .image11Div, .images .image12Div 
+	{
+		width: 100%;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.images   .image1Div  .overlay ,  .images   .image2Div  .overlay ,  .images   .image3Div  .overlay ,
+	.images   .image4Div  .overlay ,  .images   .image5Div  .overlay ,  .images   .image6Div  .overlay ,
+	.images   .image7Div  .overlay ,  .images   .image8Div  .overlay ,  .images   .image9Div  .overlay ,
+	.images   .image10Div .overlay ,  .images   .image11Div .overlay ,  .images   .image12Div .overlay 
+	{
+		width: 100%;
+	}
+    /* ------------------------------------------ meet part ------------------------------------------*/
+	.meet h2
+	{
+		font-size: 36px;
+	}
+	.meet .meet_images .meetImagesDiv1 , .meet .meet_images .meetImagesDiv2 , .meet .meet_images .meetImagesDiv3,
+	.meet .meet_images .meetImagesDiv4
+	{
+		float: none;
+		width: 100%;
+		margin: 0;
+		margin-bottom:50px;
+		padding: 0;
+	}
+	/* -------------------- each div of questions part of home page --------------------*/
+	.questionDiv .whatQuestionDiv , .questionDiv .whoQuestionDiv , .questionDiv .howQuestionDiv  ,
+	.questionDiv .whatBelieveQuestionDiv 
+	{
+		display: block;
+		width: 100%;
+		margin-left: 0;
+	}
+	/* -------------------- h2 of questions part of home page --------------------*/
+	.questionDiv .whatQuestionDiv  h4 , .questionDiv .whoQuestionDiv h4 , .questionDiv .howQuestionDiv h4  ,
+	.questionDiv .whatBelieveQuestionDiv  h4
+	{
+		font-size:35px;	
+		color:#eb5424;
+		margin-bottom: 10px;
+	}
+	/* -------------------- p of questions part of home page --------------------*/
+	.questionDiv .whatQuestionDiv  p , .questionDiv .whoQuestionDiv p , .questionDiv .howQuestionDiv p  ,
+	.questionDiv .whatBelieveQuestionDiv  p
+	{
+		font-size:15px;	
+	}
+	/* ------------------------- footer of three pages-------------------------*/ 
+	.footerClass
+	{
+		font-size: 18px;
+	}
+  /* ///////////////////////////////////////////////// contact page //////////////////////////////////////////////// */
+	
+	/* ----------- contact page form -----------*/
+	.contactDiv  .formDivClass form
+	{
+		display:block;
+		width: 75%;
+		margin-left:10%;
+	}
+	/* ----------- contact page form inputField and textarea -----------*/
+	.contactDiv  .formDivClass form  .nameFieldClass  ,
+	.contactDiv  .formDivClass form  .emailFieldClass ,
+	.contactDiv  .formDivClass form  .nameFieldClass  ,
+	.contactDiv  .formDivClass form  textarea	 
+	{
+		width: 100%;
+	}
+}
+@media (min-width:831px) and (max-width:1090px)
+{
+	
+	.images .image1Div , .images .image2Div , .images .image3Div , .images .image4Div , .images .image5Div , 
+	.images .image6Div , .images .image7Div , .images .image8Div , .images .image9Div , .images .image10Div ,
+	.images .image11Div, .images .image12Div 
+	{
+		width: 50%;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+/* hide the navbar icon in full screen */
+@media (min-width:1191px)
+{
+    .navbarHome        .homeContainer       .navLabel  , 
+    .navbarContactDiv  .contactDivContainer .navLabel  ,
+    .navbarBook        .bookContainer       .navLabel  
+    { display: none; } 
+}
+/* the three bullets in home page in web folk section */
+@media (min-width:0px) and (max-width:1300px)
+{
+	/* hide the thrre bullets of the home section */
+	.web .bullets
+	{
+		display: none;
+	}
+}
+/* --------------------------------------- book online page : our service section -------------------------------- */
+@media (min-width:0px) and (max-width:800px)
+{
+	/* ----------------------  <p> of container of second div of  our service section ----------------------  */
+	.ourServiceDiv .ourServiceContainer .ourServiceChild2 .ourServiceChild2Container p
+	{
+		font-size:26px;
+	}
+	/* ----------------------------  container of second div of  our service section ----------------------  */
+	.ourServiceDiv  .ourServiceContainer  .ourServiceChild2  .ourServiceChild2Container
+	{
+		margin:60% auto;
+	}
+
+}
